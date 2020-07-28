@@ -1,0 +1,107 @@
+.section-hero {
+    display: flex;
+    flex-wrap: wrap;
+    .hero {
+        width: 60%;
+        margin-top: 40vh;
+        position: relative;
+        &__subtitle {
+            @include subtitle;
+        }
+
+        &__title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 4.5rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin: 1rem 10rem 2rem 0;
+        }
+
+        &__info {
+            line-height: 1.5rem;
+            font-size: 1.2rem;
+            margin-right: 10rem;
+        }
+
+        &__nav {
+            list-style: none;
+            display: table;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            margin: 2rem 0;
+            li {
+                display: table-cell; 
+                position: relative; 
+                padding: 15px 0;
+                a {
+                    @include reset-url;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    position: relative;
+                    &:after {
+                        background: none repeat scroll 0 0 transparent;
+                        bottom: -5px;
+                        content: "";
+                        display: block;
+                        height: 3px;
+                        left: 50%;
+                        position: absolute;
+                        background: $color-font;
+                        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                        width: 0;
+                    }
+                    &:hover:after {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+                p {
+                    margin: 0 1.5rem;
+                }
+            }
+        }
+        @media screen and (max-height: 300px) {
+            ul {
+                margin-top: 40px;
+            }
+        }
+    }
+    .image-wrapper {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        img {
+        }
+    }
+}
+
+.scroll {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    &__icon{
+        width: 20px;
+        height: 35px;
+        border: 2px solid $color-font;
+        border-radius: 15px;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+
+        &__dot{
+            height: 6px;
+            margin: 2px auto 0;
+            display: block;
+            width: 3px;
+            background-color: $color-font;
+            border-radius: 50%;
+            -webkit-animation: 1.6s ease infinite wheel-up-down;
+            -moz-animation: 1.6s ease infinite wheel-up-down;
+            animation: 1.6s ease infinite wheel-up-down;
+        }
+    }
+}
