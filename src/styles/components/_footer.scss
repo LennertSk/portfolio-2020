@@ -1,0 +1,98 @@
+.section-footer {
+    margin-top: 15rem;
+    .footer-main {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        &__item {
+            display: block;
+            a, p {
+                display: block;
+                @include reset-url;
+                line-height: 1.5rem;
+                font-weight: 600;
+            }
+            a {
+                display: inline-block;
+                position: relative;
+                &:after {
+                    background: none repeat scroll 0 0 transparent;
+                    bottom: -1px;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    left: 50%;
+                    position: absolute;
+                    background: $color-font;
+                    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                    width: 0;
+                }
+                &:hover:after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+            .links {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                padding-inline-start: 0;
+            }
+            .title {
+                margin-bottom: 1rem;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+            .text {
+                font-weight: 600;
+                max-width: 90%;
+            }
+            &:nth-child(1) {
+                width: 40%;
+            }
+            &:nth-child(2), &:nth-child(4) {
+                width: 15%;
+            }
+            &:nth-child(3) {
+                width: 20%;
+            }
+            &:nth-child(1), &:nth-child(3) {
+                .text {
+                    opacity: .7;
+                }
+                a {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        border-top: 2px solid #889397;
+        margin: 2rem 0;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        
+        p {
+            font-weight: 600;
+            color: #889397;
+            a {
+                color: #889397;
+            }
+            svg {
+                margin: 0 .5rem;
+            }
+        }
+        .to-top svg path {
+            transition: all .2s ease-in;
+        }
+        .to-top:hover svg path {
+            stroke: $color-font;
+        }
+    }
+}

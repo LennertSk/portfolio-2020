@@ -1,0 +1,133 @@
+.section-projects {
+    .heading {
+        margin-top: 20vh;
+        &__sub {
+            @include subtitle;
+        }
+        &__title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 4.5rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin: 1rem 10rem 2rem 0;
+        }
+    }
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        margin: 110px -15px -15px -15px;
+        &__item {
+            width: calc(50% - 30px);
+            margin:15px;
+        }
+    }
+    .featured {
+        padding-top: 70px;
+    }
+    .project {
+        height: 100%;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        &__info {
+            @include reset-url;
+            position: absolute;
+            display: block;
+            top: 3rem;
+            left: 3rem;
+            z-index: 5;
+            .date {
+                display: block;
+                line-height: 1.25rem;
+                font-weight: normal;
+                text-transform: uppercase;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                transition: color .2s ease-in;
+            }
+            .title {
+                display: block;
+                max-width: 380px;
+                font-size: 2rem,;
+                line-height: 2.5rem;
+                padding: .5rem 0 1.5rem 0;
+                font-weight: 800;
+                letter-spacing: -.01em;
+                transition: color .2s ease-in;
+            }
+            .more {
+                color: #fff;
+                display: block;
+                font-weight: normal;
+                transition: color .2s ease-in;
+                opacity: 0;
+                svg {
+                    margin-left: .5rem;
+                }
+            }
+        }
+        &__image {
+            padding-bottom: 0 !important;
+            display: block;
+            position: relative;
+            img {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: auto;
+                z-index: 0;
+                pointer-events: none;
+            }
+        }
+
+        &::before {
+            background: $color-font;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            content: "";
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity .2s ease-in;
+        }
+
+        &:hover {
+            .project__info {
+                .date, .title {
+                    color: #fff;
+                    animation-duration: .4s;
+                    animation-name: fadeInBottom;
+                }
+                .more {
+                    opacity: .7;
+                    animation-duration: .7s;
+                    animation-name: fadeInBottomDelay;
+                }
+                @keyframes fadeInBottom {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30%);
+                    }
+                    to { opacity: 1 }
+                }
+                @keyframes fadeInBottomDelay {
+                    0%, 50% {
+                        opacity: 0;
+                        transform: translateY(30%);
+                    }
+                    100% { opacity: .7 }
+                }
+            }
+            &::before {
+                opacity: .95;
+            }
+
+        }
+    }
+}

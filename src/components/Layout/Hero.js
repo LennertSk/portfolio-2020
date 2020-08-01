@@ -1,18 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import heroImage from '../../assets/hero-image.png';
 import heroImageMask from '../../assets/hero-image-mask.png';
 
 export default class Hero extends React.Component {
 
-    onHover() {
-        console.log('get of me')
-    }
-
     render() {
         return (
 
-            <section className='section-hero'>
+            <section className='section-hero' id='hero'>
                 <div className="hero">
                     <p className="hero__subtitle">Lennert Slabbinck</p>
                     <h1 className="hero__title">Web developer &amp; <br /> front-end designer</h1>
@@ -28,9 +23,7 @@ export default class Hero extends React.Component {
                             <p>or</p>
                         </li>
                         <li className="hero__nav__url">
-                            <Link to="/projects">
-                                Read about me
-                        </Link>
+                            <a href="#about">Read about me</a>
                         </li>
                     </ul>
                 </div>

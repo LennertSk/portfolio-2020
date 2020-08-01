@@ -1,0 +1,163 @@
+.section-about {
+    .heading {
+        margin-top: 20vh;
+        &__sub {
+            @include subtitle;
+        }
+        &__title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 4.5rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin: 1rem 10rem 2rem 0;
+        }
+    }
+    .content {
+        display: flex;
+        .left-side, .right-side {
+            width: 50%;
+        }
+        .left-side {
+            background: #D1DAD9;
+            height: 650px;
+            img {
+                position: absolute;
+                left: 0;
+                
+            }
+        }
+        .right-side {
+            padding: 2rem 0 0 4rem;
+        }
+        .facts {
+            padding: 3rem;
+            .fact {
+                margin-bottom: 2rem;
+                max-width: 80%;
+                &__question {
+                    display: block;
+                    font-weight: 600;
+                    opacity: 50%;
+                    line-height: 2rem;
+                }
+                &__answer {
+                    font-weight: 600;
+                }
+                &-last {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+        .about {
+            &__title {
+                font-size: 3.5rem;
+                font-weight: bold;
+                font-family: 'Libre Baskerville', serif;
+                margin-bottom: 2rem;
+            }
+            &__navigation {
+                margin-block-start: 0;
+                margin-block-end: 0;
+                padding-inline-start: 0;
+                list-style: none;
+                li {
+                    cursor: pointer;
+                    margin: 0 2rem 0 0;
+                    display: inline-block;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    opacity: 50%;
+                    position: relative;
+                    transition: margin .2s ease-in;
+                    a {
+                        @include reset-url;
+                        padding: 1rem;
+                    }
+                    &:after {
+                        background: none repeat scroll 0 0 transparent;
+                        content: "";
+                        top: 50%;
+                        left: 2rem;
+                        display: block;
+                        height: 3px;
+                        position: absolute;
+                        background: $color-font;
+                        transition: width .3s ease 0s, left 0.3s ease 0s;
+                        width: 0;
+                    }
+                }
+                li.active {
+                    opacity: 1;
+                    position: relative;
+                    margin-right: 5rem;
+                    &:after {
+                        width: 3rem;
+                        left: 1.5rem;
+                    }
+                }
+            }
+            &__text {
+                margin: 2rem 0 4rem;
+                font-weight: 600;
+                line-height: 2rem;
+                width: 80%;
+                min-height: 370px;
+            }
+            &__url {
+                @include reset-url;
+                font-size: 1.5rem;
+                font-weight: bold;
+                position: relative;
+                transition: all .2s ease-in;
+                &:after {
+                    background: none repeat scroll 0 0 transparent;
+                    bottom: -5px;
+                    content: "";
+                    display: block;
+                    height: 3px;
+                    left: 50%;
+                    position: absolute;
+                    background: $color-font;
+                    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                    width: 0;
+                }
+                &:hover:after {
+                    width: 100%;
+                    left: 0;
+                }
+
+                svg {
+                    margin: 0 0 0 .5rem;
+                }
+            }
+        }
+    }
+}
+.tab-text {
+    display: none;
+    span {
+        opacity: .7;
+    }
+    a {
+        @include reset-url;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.show-tab {
+    display: block;
+    -webkit-animation: fade-in-tab  ease-in .2s;
+    animation: fade-in-tab  ease-in .2s;
+}
+
+@-webkit-keyframes fade-in-tab {
+    0%   { opacity: 0; transform: translateY(15%); }
+    100% { opacity: 1; }
+}
+@keyframes fade-in-tab  {
+    0%   { opacity: 0; transform: translateY(15%); }
+    100% { opacity: 1; }
+}
