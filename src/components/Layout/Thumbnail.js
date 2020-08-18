@@ -6,7 +6,7 @@ function Thumbnail(props) {
         <article className="projects__item">
             <Link className={"project " + (props.main ? 'featured' : 'personal')} to={props.link} style={{ background: props.color }}>
                 <div className="project__image">
-                    <img src={props.image} alt="Project Image" />
+                    <img src={props.image} alt="Project Thumbnail" />
                 </div>
                 <strong className="project__info">
                     <span className="date">{props.date}</span>

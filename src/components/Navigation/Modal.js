@@ -18,16 +18,16 @@ export default class Modal extends React.Component {
                         <h4>menu</h4>
                         <ul className="main__menu">
                             <li className="menu-item">
-                                <Link to="/" className='menu-item--url'>Featured<i></i></Link>
+                                <Link to="/#about" className='menu-item--url' onClick={e => { this.onClose(e); }}>Featured<i></i></Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/projects" className='menu-item--url'>Portfolio<i></i></Link>
+                                <Link to="/projects" className='menu-item--url' onClick={e => { this.onClose(e); }}>Portfolio<i></i></Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/about" className='menu-item--url'>About me<i></i></Link>
+                                <Link to="#about" className='menu-item--url' onClick={e => { this.onClose(e); }}>About me<i></i></Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/contact" className='menu-item--url'>Contact<i></i></Link>
+                                <Link to="/contact" className='menu-item--url' onClick={e => { this.onClose(e); }}>Contact<i></i></Link>
                             </li>
                         </ul>
                     </nav>

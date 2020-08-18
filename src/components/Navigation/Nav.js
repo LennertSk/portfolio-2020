@@ -12,6 +12,13 @@ export default class Nav extends React.Component {
         this.setState({
             show: !this.state.show
         });
+        var body = document.body;
+        if (!this.state.show) {
+            body.classList.add("modal-open")
+        } else {
+            body.classList.remove("modal-open")
+        }
+
     };
     render() {
         return (

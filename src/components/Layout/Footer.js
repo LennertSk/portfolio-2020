@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/logo-circle.svg';
 
 export default class Footer extends React.Component {
     render() {
@@ -48,16 +47,16 @@ export default class Footer extends React.Component {
                             Follow <br /> me on —
                         </p>
                         <li className="links-item">
-                            <Link to="#">Dribbble</Link>
+                            <a href="https://github.com/LennertSk" target='blank'>Github</a>
                         </li>
                         <li className="links-item">
-                            <Link to="#">Github</Link>
+                            <a href="https://dribbble.com/LennertSk" target='blank'>Dribbble</a>
                         </li>
                         <li className="links-item">
-                            <Link to="#">LinkedIn</Link>
+                            <a href="https://codepen.io/LennertSk" target='blank'>Codepen</a>
                         </li>
                         <li className="links-item">
-                            <Link to="#">Codepen</Link>
+                            <a href="https://www.linkedin.com/feed/" target='blank'>LinkedIn</a>
                         </li>
                     </li>
                 </ul>
@@ -67,7 +66,7 @@ export default class Footer extends React.Component {
                         <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.275 2.55017C13.675 -1.69983 8.47499 0.200166 7.99999 2.32517C7.34999 0.0751662 2.27499 -1.59983 0.724985 2.55017C-1.00001 7.17517 7.39999 11.3252 7.99999 12.0002C8.59999 11.4502 17 7.10017 15.275 2.55017" fill="#889397" />
                         </svg>
-                        in <a href="https://en.wikipedia.org/wiki/Antwerp" target="_blank">Antwerp</a>
+                        in <a href="https://en.wikipedia.org/wiki/Antwerp" target="blank">Antwerp</a>
                         , Belgium
                     </p>
                     <a href="#hero" className='to-top'>
